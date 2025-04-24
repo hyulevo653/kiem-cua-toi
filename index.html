@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chiều dài Kiếm của tôi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 100px;
+      margin: 10px 0;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔪 Chiều dài kiếm của tôi</h2>
+    <label for="swordLength">Nhập chiều dài (cm):</label><br>
+    <input type="number" id="swordLength" value="17.1" step="0.1">
+    <button onclick="checkLength()">Kiểm tra</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function checkLength() {
+      const length = parseFloat(document.getElementById("swordLength").value);
+      const messageDiv = document.getElementById("message");
+
+      if (length < 17) {
+        messageDiv.innerHTML = "❌ Lỗi: Kiếm của bạn chưa đủ độ dài tối thiểu 17cm!";
+        messageDiv.className = "error";
+      } else {
+        messageDiv.innerHTML = "✅ Tuyệt vời! Kiếm của bạn đạt chuẩn.";
+        messageDiv.className = "success";
+      }
+    }
+  </script>
+</body>
+</html>
